@@ -243,7 +243,7 @@ footer.doc-footer p{font-size:.6rem;color:var(--faint);letter-spacing:.05em;whit
 <main>
 
 <div class="disclaimer" role="note">
-  <p>The views expressed in this paper are the author's own and do not represent the official position of Accenture. The proof of concept described in Section 4 was conducted as an internal initiative; results are field observations, not peer-reviewed experimental findings. All third-party statistics are cited against their sources; source quality limitations are addressed in the body text where each claim appears.</p>
+  <p>The views expressed in this paper are the author's own and do not represent the official position of Accenture. The proof of concept described in Section 4 was conducted as an internal initiative; the metrics reported are the author's own field observations from an internal evaluation exercise and do not represent official Accenture performance benchmarks or client deliverables. All third-party statistics are cited against their sources; source quality limitations are addressed in the body text where each claim appears. No confidential client data, proprietary client methodologies, or client-identifying information has been disclosed in this paper.</p>
 </div>
 
 <!-- ABSTRACT -->
@@ -367,13 +367,13 @@ footer.doc-footer p{font-size:.6rem;color:var(--faint);letter-spacing:.05em;whit
         <span class="p-sp"></span>
         <span class="p-c">// USER PROMPT — structured with explicit coverage dimensions</span>
         <span class="p-k">FEATURE: <span class="p-v">Asset sensor anomaly detection</span></span>
-        <span class="p-k">CONTEXT: <span class="p-v">Energy sector Digital Twin monitoring system. Production asset: industrial compressor unit.</span></span>
-        <span class="p-k">REQUIREMENT: <span class="p-v">The system shall trigger a Level-2 alert when a sensor reading deviates from the 30-day rolling baseline by more than 15% for three consecutive readings.</span></span>
+        <span class="p-k">CONTEXT: <span class="p-v">Energy sector Digital Twin monitoring system. Production asset: industrial process equipment.</span></span>
+        <span class="p-k">REQUIREMENT: <span class="p-v">The system shall trigger a configured alert level when a sensor reading deviates from the rolling baseline by more than a configured threshold percentage for a defined number of consecutive readings.</span></span>
         <span class="p-sp"></span>
         <span class="p-t">Generate test scenarios covering ALL of the following dimensions:</span>
         <span class="p-t">1. Happy path — normal readings, no alert triggered</span>
-        <span class="p-t">2. Boundary conditions — 14.9%, 15.0%, 15.1% deviation exactly</span>
-        <span class="p-t">3. Consecutive reading logic — 1, 2, 3, and 4 consecutive deviating readings</span>
+        <span class="p-t">2. Boundary conditions — values at, just below, and just above the configured threshold</span>
+        <span class="p-t">3. Consecutive reading logic — fewer than, equal to, and greater than the defined trigger count</span>
         <span class="p-t">4. Sensor unavailability — null readings, sensor offline, data gap</span>
         <span class="p-t">5. Multiple simultaneous anomalies across asset sub-components</span>
         <span class="p-t">6. Baseline recalculation behaviour during an active anomaly window</span>
@@ -419,12 +419,12 @@ footer.doc-footer p{font-size:.6rem;color:var(--faint);letter-spacing:.05em;whit
 
   <article class="cs" aria-label="Accenture Digital Twin POC case study">
     <div class="cs-hd">
-      <p class="cs-ey">Implementation Case Study · Accenture · Energy Domain · 2024–2025</p>
+      <p class="cs-ey">Implementation Case Study · Accenture · Energy Sector · 2024–2025</p>
       <h3>Automated Test Case Generation for Asset Monitoring Digital Twins</h3>
     </div>
     <div class="cs-bd">
       <div class="cs-2">
-        <div class="cs-block"><p class="cs-bl">Background</p><p>The QA function supporting a Digital Twin asset monitoring platform faced a recurring capacity constraint: each two-week sprint delivered new monitoring features — sensor threshold rules, anomaly detection logic, asset state transitions — requiring test coverage within the same sprint cycle. Manual test case authoring was the consistent bottleneck. A feature of moderate complexity (10–15 user stories) required 3–4 days of QA authoring time, leaving insufficient capacity for exploratory testing and edge case investigation.</p></div>
+        <div class="cs-block"><p class="cs-bl">Background</p><p>The QA function supporting a Digital Twin asset monitoring platform for a major energy sector client faced a recurring capacity constraint: each two-week sprint delivered new monitoring features — sensor threshold rules, anomaly detection logic, asset state transitions — requiring test coverage within the same sprint cycle. Manual test case authoring was the consistent bottleneck. A feature of moderate complexity (10–15 user stories) required 3–4 days of QA authoring time, leaving insufficient capacity for exploratory testing and edge case investigation.</p></div>
         <div class="cs-block"><p class="cs-bl">Objective</p><p>Evaluate whether LLM-based test case generation could reduce the time required to produce an initial test suite for new features without degrading scenario coverage quality — specifically edge case and boundary condition coverage, which post-release defect analysis had identified as a recurring gap for this product area.</p></div>
         <div class="cs-block"><p class="cs-bl">Methodology</p><p>The evaluation ran across three consecutive sprint cycles. For each sprint, a selected feature set was assessed using two parallel tracks: the existing manual authoring process (control) and LLM-assisted generation using the structured prompt template shown in Figure 3 (experimental). Both tracks were reviewed by the same QA engineers. Metrics collected included authoring time, scenario count, edge case identification, and post-review scenario modification rate.</p></div>
         <div class="cs-block"><p class="cs-bl">Scope and Limitations</p><p>This was an internal evaluation over three sprint cycles in one product area, without random assignment or an isolated control group. The same engineers participated in both tracks, introducing potential learning effects. Implementation findings must not be generalised without further validation. LLM output was generated using Claude (Anthropic) with custom prompts; results may vary across different models and prompt configurations.</p></div>
@@ -633,7 +633,7 @@ footer.doc-footer p{font-size:.6rem;color:var(--faint);letter-spacing:.05em;whit
   <div>
     <p class="au-name">Neha Malik</p>
     <p class="au-title">Quality Engineering Associate Manager · Accenture, Noida, India</p>
-    <p class="au-bio">Neha Malik is a Quality Engineering Associate Manager at Accenture with over eleven years of experience leading enterprise quality programmes across the energy, healthcare, insurance and financial services, and airline domains. Her technical work spans automation framework development in Python using Behave and Robot Framework, CI/CD-integrated testing on Azure DevOps and Jenkins, QA dashboard design for data-driven release governance, and applied AI research in quality engineering. She holds a B.Tech in Information Technology from Amity University, Gurgaon.</p>
+    <p class="au-bio">Neha Malik is a Quality Engineering Associate Manager at Accenture with over eleven years of experience leading enterprise quality programmes across the energy, healthcare, insurance and financial services, and airline domains. Her technical work spans automation framework development in Python using Behave and Robot Framework, CI/CD-integrated testing on Azure DevOps and Jenkins, QA dashboard design for data-driven release governance, and applied AI research in quality engineering including the LLM-based test generation proof of concept documented in Section 4 of this paper. She holds a B.Tech in Information Technology from Amity University, Gurgaon.</p>
     <div class="au-links">
       <a class="au-link" href="https://nehamalik-14.github.io" target="_blank" rel="noopener">Portfolio</a>
       <a class="au-link" href="https://www.linkedin.com/in/neha-malik-accenture/" target="_blank" rel="noopener">LinkedIn</a>
