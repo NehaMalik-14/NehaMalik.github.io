@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Neha Malik – QA Engineering Leader</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#111318;
+  --ink2:#2c3140;
+  --muted:#6b7280;
+  --faint:#9ca3af;
+  --gold:#9a7d4a;
+  --gold-lt:#c4a96b;
+  --line:#e5e7eb;
+  --bg:#ffffff;
+  --bg2:#f9f8f6;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line)}
+.nav-w{max-width:1080px;margin:auto;padding:0 2.5rem;height:56px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--ink);letter-spacing:.04em}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:2.2rem;list-style:none}
+.nav-links a{font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+
+/* ── HERO ── */
+.hero{padding:140px 2.5rem 100px;max-width:1080px;margin:auto;display:grid;grid-template-columns:1fr 340px;gap:5rem;align-items:center}
+@media(max-width:780px){.hero{grid-template-columns:1fr;padding:110px 1.5rem 60px}}
+.hero-eyebrow{font-size:.7rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.1rem}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5.5vw,4.2rem);font-weight:600;color:var(--ink);line-height:1.08;margin-bottom:1.4rem;letter-spacing:-.01em}
+.hero-sub{font-size:.95rem;color:var(--muted);line-height:1.85;max-width:480px;margin-bottom:2rem;font-weight:400}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{background:var(--ink);color:#fff;padding:.7rem 1.8rem;font-size:.75rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:background .2s}
+.btn-primary:hover{background:var(--ink2)}
+.btn-secondary{border:1px solid var(--line);color:var(--muted);padding:.7rem 1.8rem;font-size:.75rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .2s}
+.btn-secondary:hover{border-color:var(--ink);color:var(--ink)}
+.hero-card{border:1px solid var(--line);padding:2rem}
+.hero-card-label{font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);margin-bottom:1.5rem;font-weight:500}
+.metric-row{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.metric{padding-bottom:1.2rem;border-bottom:1px solid var(--line)}
+.metric:nth-child(3),.metric:nth-child(4){padding-bottom:0;border-bottom:none}
+.metric-val{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--ink);line-height:1}
+.metric-lbl{font-size:.68rem;color:var(--faint);margin-top:.3rem;letter-spacing:.06em;line-height:1.4}
+
+/* ── DIVIDER ── */
+.divider{border:none;border-top:1px solid var(--line);margin:0}
+
+/* ── SECTION BASE ── */
+.sec{padding:80px 2.5rem}
+.sec-w{max-width:1080px;margin:auto}
+.sec-head{margin-bottom:3rem}
+.sec-eyebrow{font-size:.68rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3vw,2.1rem);font-weight:600;color:var(--ink)}
+.sec-alt{background:var(--bg2)}
+
+/* ── ABOUT ── */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+@media(max-width:700px){.about-grid{grid-template-columns:1fr;gap:2.5rem}}
+.about-quote{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:400;font-style:italic;color:var(--ink2);line-height:1.6;border-left:2px solid var(--gold);padding-left:1.4rem;margin-bottom:1.8rem}
+.about-body p{font-size:.9rem;color:var(--muted);line-height:1.9;margin-bottom:1rem}
+.about-right{display:flex;flex-direction:column;gap:1.2rem}
+.highlight-item{display:flex;gap:1.2rem;align-items:flex-start;padding:1.4rem;border:1px solid var(--line)}
+.hi-icon{width:36px;height:36px;border:1px solid var(--gold-lt);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hi-icon svg{width:16px;height:16px;stroke:var(--gold);fill:none;stroke-width:1.5}
+.hi-label{font-size:.75rem;font-weight:600;color:var(--ink);letter-spacing:.04em;margin-bottom:.3rem;text-transform:uppercase}
+.hi-text{font-size:.8rem;color:var(--muted);line-height:1.6}
+
+/* ── SKILLS ── */
+.skills-cols{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1px;border:1px solid var(--line)}
+.skill-cell{padding:1.6rem;background:var(--bg)}
+.skill-cell:hover{background:var(--bg2)}
+.sc-label{font-size:.65rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:.9rem}
+.sc-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.sc-tag{font-size:.75rem;color:var(--ink2);background:var(--bg2);padding:.25rem .7rem;border:1px solid var(--line)}
+
+/* ── DOMAINS ── */
+.domain-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.5rem}
+.domain-item{padding:1.8rem 1.6rem;border:1px solid var(--line);transition:border-color .2s}
+.domain-item:hover{border-color:var(--gold-lt)}
+.di-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:600;color:var(--line);line-height:1;margin-bottom:.8rem}
+.di-name{font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:.4rem;letter-spacing:.02em}
+.di-sub{font-size:.78rem;color:var(--muted);line-height:1.6}
+
+/* ── AI ── */
+.ai-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.5rem}
+.ai-item{padding:2rem 1.8rem;background:var(--ink);position:relative;overflow:hidden}
+.ai-item::before{content:'';position:absolute;top:0;left:0;width:2px;height:100%;background:var(--gold)}
+.ai-title{font-size:.8rem;font-weight:600;color:#fff;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.8rem}
+.ai-text{font-size:.8rem;color:rgba(255,255,255,.55);line-height:1.75}
+
+/* ── TIMELINE ── */
+.tl{position:relative}
+.tl-item{display:grid;grid-template-columns:180px 1fr;gap:2.5rem;padding:0 0 3rem;border-bottom:1px solid var(--line);margin-bottom:3rem}
+.tl-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+@media(max-width:680px){.tl-item{grid-template-columns:1fr}}
+.tl-left{padding-top:.25rem}
+.tl-date{font-size:.72rem;color:var(--faint);letter-spacing:.08em;font-weight:500;margin-bottom:.3rem}
+.tl-co{font-size:.78rem;font-weight:600;color:var(--gold);letter-spacing:.04em}
+.tl-right{}
+.tl-role{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--ink);margin-bottom:.15rem}
+.tl-tag{display:inline-block;font-size:.63rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-lt);padding:.15rem .55rem;margin-bottom:.9rem}
+.tl-bullets{list-style:none;padding:0}
+.tl-bullets li{font-size:.82rem;color:var(--muted);padding:.2rem 0 .2rem 1.1rem;position:relative;line-height:1.7}
+.tl-bullets li::before{content:'';position:absolute;left:0;top:.62rem;width:5px;height:1px;background:var(--gold)}
+
+/* ── CONTACT ── */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+@media(max-width:680px){.contact-grid{grid-template-columns:1fr;gap:2rem}}
+.contact-lead{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:600;color:var(--ink);line-height:1.3;margin-bottom:1rem}
+.contact-sub{font-size:.85rem;color:var(--muted);line-height:1.8}
+.contact-links{display:flex;flex-direction:column;gap:.8rem}
+.cl{display:flex;align-items:center;gap:1rem;padding:1.1rem 1.3rem;border:1px solid var(--line);text-decoration:none;transition:border-color .2s;color:var(--ink)}
+.cl:hover{border-color:var(--gold-lt)}
+.cl-icon{width:32px;height:32px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cl-icon svg{width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:1.5}
+.cl-label{font-size:.68rem;color:var(--faint);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.1rem}
+.cl-val{font-size:.82rem;color:var(--ink);font-weight:500}
+
+footer{border-top:1px solid var(--line);padding:1.5rem 2.5rem;text-align:center;font-size:.72rem;color:var(--faint);letter-spacing:.08em}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-w">
+    <div class="nav-logo">Neha <span>Malik</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#domains">Domains</a></li>
+      <li><a href="#ai">AI Work</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div style="max-width:1080px;margin:auto;padding:0 2.5rem"><hr class="divider" style="margin-top:56px"></div>
+<div style="max-width:1080px;margin:auto" class="hero">
+  <div>
+    <p class="hero-eyebrow">QA Leadership &nbsp;·&nbsp; Project Management &nbsp;·&nbsp; AI &amp; Innovation</p>
+    <h1>Neha<br>Malik</h1>
+    <p class="hero-sub">Senior QA leader and emerging project manager with 11+ years of experience driving enterprise quality, cross-functional delivery, and AI-powered innovation — ready to lead programs at the intersection of quality, technology, and intelligent systems.</p>
+    <div class="hero-actions">
+      <a href="#experience" class="btn-primary">View Experience</a>
+      <a href="#contact" class="btn-secondary">Get in Touch</a>
+    </div>
+  </div>
+  <div class="hero-card">
+    <p class="hero-card-label">Career at a Glance</p>
+    <div class="metric-row">
+      <div class="metric">
+        <div class="metric-val">11+</div>
+        <div class="metric-lbl">Years of<br>Experience</div>
+      </div>
+      <div class="metric">
+        <div class="metric-val">82%</div>
+        <div class="metric-lbl">Test Coverage<br>Achieved</div>
+      </div>
+      <div class="metric">
+        <div class="metric-val">4</div>
+        <div class="metric-lbl">Industry<br>Domains</div>
+      </div>
+      <div class="metric">
+        <div class="metric-val">5</div>
+        <div class="metric-lbl">Companies<br>Served</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="max-width:1080px;margin:auto;padding:0 2.5rem"><hr class="divider"></div>
+
+<!-- ABOUT -->
+<section class="sec" id="about">
+  <div class="sec-w">
+    <div class="sec-head">
+      <p class="sec-eyebrow">Profile</p>
+      <h2 class="sec-title">About Me</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-body">
+        <p class="about-quote">"Great projects don't just ship on time — they ship with quality built in from day one."</p>
+        <p>Senior QA leader with 11+ years of experience managing enterprise programs across energy, healthcare, insurance, and airline domains. Proven ability to lead cross-functional teams, manage delivery timelines, align stakeholders, and drive risk-based decision-making at scale.</p>
+        <p>Experienced in end-to-end program ownership — from requirement analysis and backlog refinement to release planning and post-delivery quality governance. Comfortable owning both the strategic roadmap and the hands-on execution across complex, multi-team environments.</p>
+        <p>Actively pursuing project and program management opportunities in QA, technology delivery, and AI-driven initiatives — bringing deep technical expertise, leadership experience, and a product-first mindset to every engagement.</p>
+      </div>
+      <div class="about-right">
+        <div class="highlight-item">
+          <div class="hi-icon">
+            <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div>
+            <p class="hi-label">Test Coverage Growth</p>
+            <p class="hi-text">Grew test coverage from 65% to 82% using SonarQube at Accenture — a measurable improvement in product quality metrics across enterprise energy platforms.</p>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="hi-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          </div>
+          <div>
+            <p class="hi-label">Generative AI POC Lead</p>
+            <p class="hi-text">Led an LLM-based proof of concept for automated test case generation from user stories — demonstrating the future of AI-assisted quality engineering.</p>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="hi-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div>
+            <p class="hi-label">CI/CD Integration</p>
+            <p class="hi-text">Optimized CI/CD pipelines by embedding automated testing, accelerating release cycles and improving overall deployment reliability across teams.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- SKILLS -->
+<section class="sec sec-alt" id="skills">
+  <div class="sec-w">
+    <div class="sec-head">
+      <p class="sec-eyebrow">Expertise</p>
+      <h2 class="sec-title">Skills &amp; Technologies</h2>
+    </div>
+    <div class="skills-cols">
+      <div class="skill-cell">
+        <p class="sc-label">Programming &amp; Automation</p>
+        <div class="sc-tags"><span class="sc-tag">Python</span><span class="sc-tag">Behave</span><span class="sc-tag">Robot Framework</span></div>
+      </div>
+      <div class="skill-cell">
+        <p class="sc-label">AI &amp; Emerging Tech</p>
+        <div class="sc-tags"><span class="sc-tag">LLM Fundamentals</span><span class="sc-tag">Prompt Engineering</span><span class="sc-tag">AI-driven Testing</span><span class="sc-tag">Intelligent Test Design</span></div>
+      </div>
+      <div class="skill-cell">
+        <p class="sc-label">CI/CD &amp; DevOps</p>
+        <div class="sc-tags"><span class="sc-tag">Jenkins</span><span class="sc-tag">GitHub</span><span class="sc-tag">Azure DevOps</span><span class="sc-tag">Continuous Testing</span></div>
+      </div>
+      <div class="skill-cell">
+        <p class="sc-label">Testing Expertise</p>
+        <div class="sc-tags"><span class="sc-tag">Web &amp; Mobile</span><span class="sc-tag">API Testing</span><span class="sc-tag">Regression</span><span class="sc-tag">Integration</span><span class="sc-tag">Functional</span></div>
+      </div>
+      <div class="skill-cell">
+        <p class="sc-label">Quality &amp; Risk</p>
+        <div class="sc-tags"><span class="sc-tag">Test Strategy</span><span class="sc-tag">Risk-based Testing</span><span class="sc-tag">Defect Analysis</span><span class="sc-tag">Release Readiness</span></div>
+      </div>
+      <div class="skill-cell">
+        <p class="sc-label">Tools &amp; Platforms</p>
+        <div class="sc-tags"><span class="sc-tag">JIRA</span><span class="sc-tag">Confluence</span><span class="sc-tag">Postman</span><span class="sc-tag">SonarQube</span><span class="sc-tag">BrowserStack</span><span class="sc-tag">SOAP UI</span></div>
+      </div>
+      <div class="skill-cell">
+        <p class="sc-label">Product &amp; Delivery</p>
+        <div class="sc-tags"><span class="sc-tag">Requirement Analysis</span><span class="sc-tag">Backlog Refinement</span><span class="sc-tag">Release Planning</span><span class="sc-tag">Stakeholder Collaboration</span></div>
+      </div>
+      <div class="skill-cell">
+        <p class="sc-label">Data &amp; Metrics</p>
+        <div class="sc-tags"><span class="sc-tag">Test Coverage KPIs</span><span class="sc-tag">Defect Leakage</span><span class="sc-tag">QA Dashboards</span><span class="sc-tag">Release Quality</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- DOMAINS -->
+<section class="sec" id="domains">
+  <div class="sec-w">
+    <div class="sec-head">
+      <p class="sec-eyebrow">What I Bring to the Table</p>
+      <h2 class="sec-title">Open to These Roles</h2>
+    </div>
+    <div class="domain-grid">
+      <div class="domain-item">
+        <div class="di-num">01</div>
+        <div class="di-name">QA Project Manager</div>
+        <div class="di-sub">Leading quality programs end-to-end — planning, resourcing, stakeholder alignment, risk management, and delivery governance across enterprise systems.</div>
+      </div>
+      <div class="domain-item">
+        <div class="di-num">02</div>
+        <div class="di-name">Program / Delivery Manager</div>
+        <div class="di-sub">Owning cross-functional delivery roadmaps, managing dependencies across engineering and product teams, and ensuring on-time, high-quality releases.</div>
+      </div>
+      <div class="domain-item">
+        <div class="di-num">03</div>
+        <div class="di-name">AI Project Manager</div>
+        <div class="di-sub">Managing AI/ML product delivery — bridging technical and business teams, overseeing LLM-based initiatives, and driving responsible AI adoption within organizations.</div>
+      </div>
+      <div class="domain-item">
+        <div class="di-num">04</div>
+        <div class="di-name">QA Engineering Lead</div>
+        <div class="di-sub">Leading QA strategy, automation frameworks, and team capability building — setting quality standards and embedding testing into the full product development lifecycle.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- AI -->
+<section class="sec sec-alt" id="ai">
+  <div class="sec-w">
+    <div class="sec-head">
+      <p class="sec-eyebrow">Forward-Looking Work</p>
+      <h2 class="sec-title">AI &amp; Innovation</h2>
+    </div>
+    <div class="ai-grid">
+      <div class="ai-item">
+        <p class="ai-title">Generative AI POC</p>
+        <p class="ai-text">Led an LLM-based proof of concept for automated test case generation from user stories and requirements — focusing on efficiency and edge case identification.</p>
+      </div>
+      <div class="ai-item">
+        <p class="ai-title">Predictive Defect Analysis</p>
+        <p class="ai-text">Exploring AI-driven test optimization and predictive defect analysis using historical test data to proactively reduce defect leakage before production.</p>
+      </div>
+      <div class="ai-item">
+        <p class="ai-title">Prompt Engineering</p>
+        <p class="ai-text">Applying prompt engineering techniques to improve test design efficiency and scenario coverage — accelerating the test creation lifecycle significantly.</p>
+      </div>
+      <div class="ai-item">
+        <p class="ai-title">Intelligent QA Practices</p>
+        <p class="ai-text">Driving a team-wide transition from traditional automation to intelligent, AI-assisted quality engineering practices for next-generation products.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- EXPERIENCE -->
+<section class="sec" id="experience">
+  <div class="sec-w">
+    <div class="sec-head">
+      <p class="sec-eyebrow">Career History</p>
+      <h2 class="sec-title">Work Experience</h2>
+    </div>
+    <div class="tl">
+
+      <div class="tl-item">
+        <div class="tl-left">
+          <p class="tl-date">Jan 2022 — Present</p>
+          <p class="tl-co">Accenture</p>
+        </div>
+        <div class="tl-right">
+          <p class="tl-role">Quality Engineering Associate Manager</p>
+          <span class="tl-tag">Current Role</span>
+          <ul class="tl-bullets">
+            <li>Developed and executed end-to-end quality strategy for enterprise energy platforms, focusing on Digital Twin systems for asset simulation</li>
+            <li>Designed scalable automation frameworks in Python with Behave to optimize regression and system validation workflows</li>
+            <li>Optimized CI/CD pipelines to incorporate automated testing, accelerating reliable product release cycles</li>
+            <li>Grew test coverage from 65% to 82% using SonarQube, meaningfully improving product quality metrics</li>
+            <li>Built QA dashboards delivering detailed insights into defect coverage and release readiness</li>
+            <li>Led a Generative AI (LLM-based) POC to streamline test case generation from requirements</li>
+            <li>Delivered automation framework training to QA teams, increasing adoption and productivity</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left">
+          <p class="tl-date">Oct 2021 — Jan 2022</p>
+          <p class="tl-co">HCL Technologies</p>
+        </div>
+        <div class="tl-right">
+          <p class="tl-role">Senior Test Lead</p>
+          <ul class="tl-bullets">
+            <li>Directed QA efforts for enterprise applications, enhancing operational efficiency and meeting business needs</li>
+            <li>Developed comprehensive risk-based testing strategies to improve system reliability and user experience</li>
+            <li>Coordinated with stakeholders to deliver high-quality outcomes aligned with product vision</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left">
+          <p class="tl-date">Sep 2019 — Oct 2021</p>
+          <p class="tl-co">NTT DATA</p>
+        </div>
+        <div class="tl-right">
+          <p class="tl-role">Senior Test Analyst</p>
+          <ul class="tl-bullets">
+            <li>Supported QA for healthcare and insurance domain applications, focusing on policy management and financial workflow efficiency</li>
+            <li>Led automation framework initiatives using Robot Framework and Python to enhance business workflow validation</li>
+            <li>Drove successful product launches through precise effort estimates and detailed risk analyses</li>
+            <li>Maintained full traceability between requirements and test coverage for core business functionalities</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left">
+          <p class="tl-date">May 2018 — Sep 2019</p>
+          <p class="tl-co">Sopra Steria</p>
+        </div>
+        <div class="tl-right">
+          <p class="tl-role">Senior Software Engineer</p>
+          <ul class="tl-bullets">
+            <li>Executed detailed web, mobile, and API tests for EasyJet's booking and operational systems</li>
+            <li>Validated end-to-end customer journeys including booking, payment, and flight management workflows</li>
+            <li>Performed integration testing across multiple systems to ensure seamless user experience</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-left">
+          <p class="tl-date">Dec 2014 — May 2018</p>
+          <p class="tl-co">NTT DATA</p>
+        </div>
+        <div class="tl-right">
+          <p class="tl-role">Testing Engineer Analyst</p>
+          <ul class="tl-bullets">
+            <li>Tested Healthcare domain applications handling patient data and operational workflows</li>
+            <li>Contributed to modernization of legacy systems into web-based applications ensuring functional consistency</li>
+            <li>Performed root cause analysis and UAT support ensuring alignment with business expectations</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- EDUCATION -->
+    <div style="margin-top:3.5rem;display:flex;gap:2.5rem;padding:2rem;border:1px solid var(--line);align-items:center;flex-wrap:wrap">
+      <div>
+        <p style="font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:.4rem">Education</p>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--ink)">Bachelor of Science — Information Technology</p>
+        <p style="font-size:.8rem;color:var(--muted);margin-top:.2rem">Amity University, Gurgaon &nbsp;·&nbsp; 2014</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CONTACT -->
+<section class="sec" id="contact">
+  <div class="sec-w">
+    <div class="contact-grid">
+      <div>
+        <p class="sec-eyebrow">Let's Connect</p>
+        <p class="contact-lead">Open to QA Project Management, Program Management &amp; AI roles.</p>
+        <p class="contact-sub">With 11+ years leading enterprise quality programs, cross-functional teams, and AI-driven initiatives, I bring both the strategic mindset and technical depth to make an immediate impact. If your organization values rigour, innovation, and delivery excellence — let's talk.</p>
+      </div>
+      <div class="contact-links">
+        <a class="cl" href="mailto:neha.malik028@gmail.com">
+          <div class="cl-icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></div>
+          <div><p class="cl-label">Email</p><p class="cl-val">neha.malik028@gmail.com</p></div>
+        </a>
+        <a class="cl" href="https://www.linkedin.com/in/nehamalik01/" target="_blank">
+          <div class="cl-icon"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
+          <div><p class="cl-label">LinkedIn</p><p class="cl-val">linkedin.com/in/nehamalik01</p></div>
+        </a>
+        <a class="cl" href="tel:+919717321678">
+          <div class="cl-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.68 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.59 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg></div>
+          <div><p class="cl-label">Phone</p><p class="cl-val">+91 97 1732 1678</p></div>
+        </a>
+        <div class="cl" style="cursor:default">
+          <div class="cl-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><p class="cl-label">Location</p><p class="cl-val">Noida, UP 201304, India</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Neha Malik &nbsp;·&nbsp; Quality Engineering Leader &nbsp;·&nbsp; Noida, India</footer>
+
+</body>
+</html>
